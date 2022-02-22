@@ -127,17 +127,6 @@ public class HomeController {
 		return "faq";
 	}
 
-	@RequestMapping(value="joinOk.do")
-	public String individualJoin(Model model) {
-		
-		//처리하는 부분
-		indvDto id = new indvDto();
-		ArrayList<indvVo> alist = id.selectAllUser();
-		
-		model.addAttribute("alist", alist);		
-		
-		return "joinOk.do";
-	}
 	
 	
 

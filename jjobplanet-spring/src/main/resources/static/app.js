@@ -38,3 +38,4 @@ function addWishlist()
 {
 	alert('관심 기업 등록');
 }
+

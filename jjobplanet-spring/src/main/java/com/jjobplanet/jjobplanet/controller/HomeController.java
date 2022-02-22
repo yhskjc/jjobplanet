@@ -5,10 +5,6 @@ import java.util.ArrayList;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
-import com.jjobplanet.jjobplanet.model.indvDto;
-import com.jjobplanet.jjobplanet.model.indvVo;
-import com.jjobplanet.jjobplanet.databasemanager.DBManager;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -128,7 +124,6 @@ public class HomeController {
 	}
 
 	
-	
 
 	@RequestMapping(value="/noticeWriteAction.do")
 	public String noticeWriteAction()
@@ -141,6 +136,15 @@ public class HomeController {
 		return "join";
 	}
 	
+	@RequestMapping(value = "/joinOk.do", method = RequestMethod.POST)
+	public String joinOk(HttpServletRequest request) {
+				
+		String umail = request.getParameter("umail");
+		String upw = request.getParameter("upw");
+		System.out.println("umail= " + umail + " upw= " + upw);
+
+		return "joinOk";
+	}
 	
 
 	@GetMapping("/individualJoin")

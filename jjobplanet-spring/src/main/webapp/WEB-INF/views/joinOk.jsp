@@ -31,7 +31,7 @@
                	<main>
                		 <div id="warp-main">
 	                    <!-- 내용 -->
-                        <form name="joinOk" method="post" action="joinOk">
+                        <form name="joinOk" method="post" action="joinOk.do">
                             <div style="width: 100%;">                     
                                 <div id="joinlogin" style="width: 100%;"> 
                                     <div style="text-align: center;"><img style=" border:1px solid; width: 300px; height: 250px;" ></div>        

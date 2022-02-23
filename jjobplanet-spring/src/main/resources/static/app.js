@@ -32,7 +32,7 @@ function clearSearchInput(){
 
 function search()
 {
-	console.log('검색!');
+	location.href='./search.do';
 }
 
 function applyCompany()

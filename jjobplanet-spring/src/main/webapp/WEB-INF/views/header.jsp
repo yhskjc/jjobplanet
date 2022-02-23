@@ -18,8 +18,8 @@
 
 <div id="main-search-container" style="display: flex; align-items: center; padding: 0 16px;">
     <span class="material-icons" >search</span>
-    <input type="text" id="search-input" style="width: 100%; outline: none; border: none;" placeholder="검색어를 입력해 주세요 " onKeypress="javascript:if(event.keyCode===13){search()}">
-    <span id="input-clear" class="material-icons" onclick="clearSearchInput()">clear</span>
+    <input type="text" id="search-input" style="width: 100%; outline: none; border: none;" onkeyup="notifyInput()" placeholder="검색어를 입력해 주세요 " onKeypress="javascript:if(event.keyCode===13){search()}">
+    <span id="input-clear" class="material-icons" onclick="clearSearchInput()" style="display: none;">clear</span>
 </div>
  
 

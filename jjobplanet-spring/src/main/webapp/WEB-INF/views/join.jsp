@@ -24,7 +24,7 @@
     </head>
     <body>
 		<div style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
-            <div>
+            <div style="text-align: center;">
                 <img style="width: 500px; height: auto;object-fit: cover;" src="./img/hire.png";>
                 <div style="text-align: center;">                                                            
                     <h1>회원가입</h1>       

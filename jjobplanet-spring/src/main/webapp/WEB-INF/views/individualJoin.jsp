@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
         
         <!-- SCRIPT-->
         <script src="./app.js"></script>    
@@ -50,7 +49,7 @@
         <div style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
             <form name="individualJoin" id="individualJoin" method="post" action="joinOk.do"  onsubmit="return formCheck();">
                 <div>
-                    <img style="width: 500px; height: auto;object-fit: cover;" src="./img/recruit.png";>
+                    <div style="text-align: center;"><img style="width: 500px; height: auto;object-fit: cover; margin: 0 auto;" src="./img/recruit.png";></div>
                     <div>
                         <h1>회원가입(개인)</h1>     
                         <div style="margin-top: 40px; display: block;">

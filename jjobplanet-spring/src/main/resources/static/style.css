@@ -4,7 +4,7 @@
 * {
 
 	box-sizing: border-box;
-	
+
     font-family: 'Noto Sans KR', sans-serif;
     padding: 0;
     margin: 0;
@@ -362,6 +362,8 @@ textarea {
     line-height: 60px;
     text-align: center;
     border: 1px solid black;
+
+	cursor: pointer;
 }		
     
 .policy_upper_wrap { text-align: center; }

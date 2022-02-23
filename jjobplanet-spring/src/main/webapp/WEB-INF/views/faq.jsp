@@ -44,18 +44,18 @@
                		 <div>
 	                    <!-- 내용 -->
                         <div class="policy_upper_wrap" style="display: flex; justify-content: space-between;">
-                            <span><a href="./policy">이용약관</a></span>
-                            <span><a href="/privacy">개인정보처리방침</a></span>
-                            <span><a href="/recruitService">채용서비스 약관</a></span>
-                            <span><a href="/notice">공지사항</a></span>
-                            <span><a href="/faq">FAQ</a></span>
+                            <span onclick="location.href='./policy'">이용약관</span>
+                            <span onclick="location.href='./privacy'">개인정보처리방침</span>
+                            <span onclick="location.href='./recruitService'">채용서비스 약관</span>
+                            <span onclick="location.href='./notice'">공지사항</span>
+                            <span onclick="location.href='./faq'">FAQ</span>
                         </div>
                         <div class="policy_body_wrap">
                             <div>
                                 <h1>FAQ</h1>
                                 <div style="margin-top: 40px;">
                                     <div onclick="ShowAnswer(1);" style="font-weight: bold; font-size: 20px;">잡플래닛은 어떻게 사용자를 보호하나요? </div>
-                                    <p  id="faq_answer1" style="margin-top: 16px;">
+                                    <p id="faq_answer1" style="margin-top: 16px;">
                                         잡플래닛은 사용자 정보를 최소한으로 수집합니다. 정보를 수집하지 않기 때문에 유출될 정보도 없습니다.
                                         잡플래닛은 사용자를 보호하기 위해 다양한 장치를 갖췄습니다. 사용자가 리뷰 작성 중 실수로 자신의 신분을 드러내는 경우, 해당 리뷰는 등록되지 않습니다. 잡플래닛의 필터링 시스템과 전문 관리 인력에 의해 사용자가 다시 한 번 검토하도록 되돌려 보내지기 때문입니다.
                                     </p>

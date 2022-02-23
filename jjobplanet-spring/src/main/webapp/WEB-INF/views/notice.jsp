@@ -44,11 +44,11 @@
                		 <div>
 	                    <!-- 내용 -->
                         <div class="policy_upper_wrap" style="display: flex; justify-content: space-between;">
-                            <span><a href="/policy">이용약관</a></span>
-                            <span><a href="/privacy">개인정보처리방침</a></span>
-                            <span><a href="/recruitService">채용서비스 약관</a></span>
-                            <span><a href="/notice">공지사항</a></span>
-                            <span><a href="/faq">FAQ</a></span>
+                            <span onclick="location.href='./policy'">이용약관</span>
+                            <span onclick="location.href='./privacy'">개인정보처리방침</span>
+                            <span onclick="location.href='./recruitService'">채용서비스 약관</span>
+                            <span onclick="location.href='./notice'">공지사항</span>
+                            <span onclick="location.href='./faq'">FAQ</span>
                         </div>
                         <div class="policy_body_wrap">
                             <div>

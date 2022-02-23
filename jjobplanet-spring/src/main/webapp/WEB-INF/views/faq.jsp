@@ -21,15 +21,7 @@
         <script src="./app.js"></script>       
         <script src="./jquery-3.6.0.min.js"></script>
         <script>
-			window.onload = function()
-			{
-				$(".faq_answer_row").hide();
-			}
-			
-			function ShowAnswer(id)
-			{
-				$("#faq_answer"+id).toggle();
-			}
+			window.onload = () => { $(".faq_answer_row").hide(); }
 		</script>
     </head>
     <body>
@@ -55,7 +47,7 @@
                             <div>
                                 <h1>FAQ</h1>
                                 <div style="margin-top: 40px;">
-                                    <div onclick="ShowAnswer(1);" style="font-weight: bold; font-size: 20px;">잡플래닛은 어떻게 사용자를 보호하나요? </div>
+                                    <div onclick="openAnswer(1);" style="font-weight: bold; font-size: 20px;">잡플래닛은 어떻게 사용자를 보호하나요? </div>
                                     <p class="faq_answer_row"  id="faq_answer1" style="margin-top: 16px;">
                                         잡플래닛은 사용자 정보를 최소한으로 수집합니다. 정보를 수집하지 않기 때문에 유출될 정보도 없습니다.
                                         잡플래닛은 사용자를 보호하기 위해 다양한 장치를 갖췄습니다. 사용자가 리뷰 작성 중 실수로 자신의 신분을 드러내는 경우, 해당 리뷰는 등록되지 않습니다. 잡플래닛의 필터링 시스템과 전문 관리 인력에 의해 사용자가 다시 한 번 검토하도록 되돌려 보내지기 때문입니다.
@@ -63,7 +55,7 @@
                                 </div>
                                 <div style="border: solid #dddddd 1px; margin: 20px 0"> </div>
                                 <div>
-                                    <div onclick="ShowAnswer(2);" style="font-weight: bold; font-size: 20px;">잡플래닛의 정보는 어떻게 이용할 수 있나요?</div>
+                                    <div onclick="openAnswer(2);" style="font-weight: bold; font-size: 20px;">잡플래닛의 정보는 어떻게 이용할 수 있나요?</div>
                                     <p class="faq_answer_row" id="faq_answer2" style="margin-top: 16px;">
                                         잡플래닛에서는 누구나 전·현직 직원이 남긴 평점과 기업리뷰, 연봉정보, 면접후기 등을 찾아볼 수 있습니다.
                                         회원님의 경험을 바탕으로 리뷰, 연봉, 면접에 관한 정보를 작성해 주시면, 같은 카테고리의 게시글들을 승인된 날로부터 1년동안 무료로 열람할 수 있습니다.

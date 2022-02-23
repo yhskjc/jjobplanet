@@ -39,3 +39,11 @@ function addWishlist()
 	alert('관심 기업 등록');
 }
 
+function openAnswer(id)
+{
+    $("#faq_answer"+id).toggle();
+}
+function openNotice(id)
+{
+    $("#notice_notice"+id).toggle();
+}

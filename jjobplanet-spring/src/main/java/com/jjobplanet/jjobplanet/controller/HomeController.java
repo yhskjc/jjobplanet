@@ -183,6 +183,11 @@ public class HomeController {
 		return "joinokCompany";
 	}
 	
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
+
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public String login(HttpServletRequest request, RedirectAttributes setAttribute) throws ServletException, IOException {
 				

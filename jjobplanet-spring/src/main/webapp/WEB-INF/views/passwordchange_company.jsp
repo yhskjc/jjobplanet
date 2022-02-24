@@ -20,6 +20,26 @@
         <!-- SCRIPT-->
         <script src="./app.js"></script>       
         <script src="./jquery-3.6.0.min.js"></script>
+        <script>
+            function passwordmatch() 
+        {				
+            let password2 = $('#password2').val();
+            let password3 = $('#password3').val();
+
+             if (password2 === '' || password3 === '' ) alert('비밀번호를 입력해 주세요');
+            else if (password2 !== password3) alert('비밀번호가 일치하지 않습니다.');
+            else {
+                $.ajax({
+                    url: 'passwordchange.do',
+                    method: 'POST',
+                    data: {
+                        'password3' : password3,			           
+                    },
+                    success : (response) => {   location.href = 'passwordchange.do';	 }	      
+                })
+            }			
+        }
+        </script> 
     </head>
     <body>
 		<div id="container">
@@ -45,7 +65,7 @@
                                 <h2>비밀번호 변경</h2>
                                 <div style="margin-top: 30px;">
                                     <div>현재 비밀번호</div>
-                                    <input type="text" style="margin-top: 16px">
+                                    <input type="text" style="margin-top: 16px" value="********" disabled>
                                 </div>
                                 <div style="display: flex; margin-top: 16px;">
                                     <div style="margin-right: 16px;">

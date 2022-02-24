@@ -21,25 +21,25 @@
         <script src="./app.js"></script>       
         <script src="./jquery-3.6.0.min.js"></script>
         <script>
-            function passwordmatch()
-            {
-                var p2 = document.getElementById('password2').value;
-                var p3 = document.getElementById('password3').value;
-                if(p2.value != null)
-                {
-                    alert("새 비밀번호를 입력해 주십시오")
-                    return false;
-                }else if(p2 != p3)
-                {
-                    alert("비밀번호가 일치하지 않습니다.")
-                    return false;
-                }else
-                {
-                    alert("비밀번호가 일치합니다.")
-                    return true;
-                }
-            }
-        </script>
+            function passwordmatch() 
+        {				
+            let password2 = $('#password2').val();
+            let password3 = $('#password3').val();
+
+             if (password2 === '' || password3 === '' ) alert('비밀번호를 입력해 주세요');
+            else if (password2 !== password3) alert('비밀번호가 일치하지 않습니다.');
+            else {
+                $.ajax({
+                    url: 'passwordchange.do',
+                    method: 'POST',
+                    data: {
+                        'password3' : password3,			           
+                    },
+                    success : (response) => {   location.href = 'passwordchange.do';	 }	      
+                })
+            }			
+        }
+        </script>  
     </head>
     <body>
 		<div id="container">
@@ -67,7 +67,7 @@
                                <from name="passwordchange">
                                 <div style="margin-top: 30px;">
                                     <div>현재 비밀번호</div>
-                                    <input type="text" style="margin-top: 16px">
+                                    <input type="text" style="margin-top: 16px" value="********" disabled>
                                 </div>
                                 <div style="display: flex; margin-top: 16px;">
                                     <div style="margin-right: 16px;">

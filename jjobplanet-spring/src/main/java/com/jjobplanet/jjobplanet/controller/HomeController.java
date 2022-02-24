@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import com.jjobplanet.jjobplanet.databasemanager.comjoinDB;
 import com.jjobplanet.jjobplanet.databasemanager.indvjoinDB;
 import com.jjobplanet.jjobplanet.databasemanager.loginDB;
+import com.jjobplanet.jjobplanet.databasemanager.passwordchangeDB;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -73,9 +74,15 @@ public class HomeController {
 	{
 		return "passwordchange_company";
 	}
-	@GetMapping("/passwordchange")
-	public String passwordchange() 
-	{
+	@RequestMapping(value = "/passwordchange.do", method = RequestMethod.POST)
+	public String passwordchange(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
+	
+		String upw = request.getParameter("upw");
+		System.out.println("upw="+upw);
+
+		passwordchangeDB pw = new passwordchangeDB();
+		pw.doPost(request, response);
+
 		return "passwordchange";
 	}
 	@GetMapping("/jobpostinglist")
@@ -222,6 +229,7 @@ public class HomeController {
 	public String findPasswordOk() {
 		return "findPasswordOk";
 	}
+
 
 	
 }

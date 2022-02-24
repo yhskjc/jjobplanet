@@ -27,7 +27,7 @@ public class passwordchangeDB {
 		try(Connection conn =  DriverManager.getConnection(host,userid,passwd);
 			Statement stmt = conn.createStatement()) 
 		{	
-			String sql = "update user set upw =mp5('" + upw + "')) 
+			String sql = "update user set upw =mp5('" + upw + "') 
 			stmt.executeUpdate(sql);
 			object.put("result", "OK");			
 			

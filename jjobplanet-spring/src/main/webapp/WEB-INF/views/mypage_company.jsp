@@ -45,7 +45,7 @@
                                     <div style="width: 796px; margin-top: 40px;">
                                         <dl style="display: flex; margin-bottom: 16px;">
                                             <dt class="company-info-head">산업</dt>
-                                            <dd>포털,컨텐츠,커뮤니티 </dd>
+                                            <dd>var ccategory ='${company.ccategory}';</dd>
                                         </dl>
                                         <dl style="display: flex; margin-bottom: 16px;">
                                             <dt class="company-info-head">사원수</dt>	

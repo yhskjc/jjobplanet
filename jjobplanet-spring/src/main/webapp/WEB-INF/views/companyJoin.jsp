@@ -191,8 +191,7 @@
                                 <div style="margin-top: 16px;" > <input type="checkbox" style="margin-right: 8px;" readonly>약관에 동의합니다.</div>
                                 <div style="margin-top: 16px;"><button onclick="location.href='./joinOk'" id="join_button">가입완료</button></div>
                             </div>   
-                        </form>
-                    
+                        </form>                    
         </div>
     </body>
 </html>

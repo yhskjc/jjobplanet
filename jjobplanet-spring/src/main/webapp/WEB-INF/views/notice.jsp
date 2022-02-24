@@ -15,20 +15,13 @@
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-        
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+
         <!-- SCRIPT-->
         <script src="./app.js"></script>       
         <script src="./jquery-3.6.0.min.js"></script>
         <script>
-			window.onload = function()
-			{
-				$(".notice_note_row").hide();
-			}
-			
-			function ShowNotice(id)
-			{
-				$("#notice_notice"+id).toggle();
-			}
+			window.onload = () => { $(".notice_note_row").hide(); }
 		</script>
     </head>
     <body>
@@ -44,11 +37,11 @@
                		 <div>
 	                    <!-- 내용 -->
                         <div class="policy_upper_wrap" style="display: flex; justify-content: space-between;">
-                            <span><a href="/policy">이용약관</a></span>
-                            <span><a href="/privacy">개인정보처리방침</a></span>
-                            <span><a href="/recruitService">채용서비스 약관</a></span>
-                            <span><a href="/notice">공지사항</a></span>
-                            <span><a href="/faq">FAQ</a></span>
+                            <span onclick="location.href='./policy'">이용약관</span>
+                            <span onclick="location.href='./privacy'">개인정보처리방침</span>
+                            <span onclick="location.href='./recruitService'">채용서비스 약관</span>
+                            <span onclick="location.href='./notice'">공지사항</span>
+                            <span onclick="location.href='./faq'">FAQ</span>
                         </div>
                         <div class="policy_body_wrap">
                             <div>
@@ -58,7 +51,7 @@
                                     <span class="notice_date">등록일</span>
                                 </div>
                                 <div class="notice_td_row">
-                                    <span class="notice_title"><a href="javascript:ShowNotice(1);">1/28일(금)~2/2일(수) 잡플래닛 고객센터 설 휴무 진행 안내</a></span>                                    <span class="notice_date">2020-02-02</span>
+                                    <span class="notice_title"><a href="openNotice(1);">1/28일(금)~2/2일(수) 잡플래닛 고객센터 설 휴무 진행 안내</a></span>                                    <span class="notice_date">2020-02-02</span>
                                 </div>
                                 <div id="notice_notice1" class="notice_note_row">
                                     <span class="notice_note">
@@ -75,7 +68,7 @@
                                     </span>
                                 </div>
                                 <div class="notice_td_row">
-                                    <span class="notice_title"><a href="javascript:ShowNotice(2);">공지제목입니다2</a></span>
+                                    <span class="notice_title"><a href="openNotice(2);">공지제목입니다2</a></span>
                                     <span class="notice_date">2020-02-02</span>
                                 </div>
                                 <div id="notice_notice2" class="notice_note_row">

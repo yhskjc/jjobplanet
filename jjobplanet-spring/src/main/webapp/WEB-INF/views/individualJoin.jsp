@@ -56,7 +56,7 @@
         <div style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
             <form name="individualJoin" id="individualJoin" method="post" action="./joinOk.do"">
                 <div>
-                    <img style="width: 500px; height: auto;object-fit: cover;" src="./img/recruit.png";>
+                    <div style="text-align: center;"><img style="width: 500px; height: auto;object-fit: cover; margin: 0 auto;" src="./img/recruit.png";></div>
                     <div>
                         <h1>회원가입(개인)</h1>     
                         <div style="margin-top: 40px; display: block;">

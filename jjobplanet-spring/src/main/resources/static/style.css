@@ -2,6 +2,9 @@
 
 
 * {
+
+	box-sizing: border-box;
+
     font-family: 'Noto Sans KR', sans-serif;
     padding: 0;
     margin: 0;
@@ -14,13 +17,21 @@
 
 main { margin: 50px 0 }
 button, 
-input[type="button"], input[type="submit"], input[type="text"], input[type="email"], input[type="password"]  {
+input[type="button"], input[type="submit"] {
     width: 155px;
     height: 40px;
     background-color: transparent;
-    border: solid #707070 1px;
+    border: solid #a8a8a8 1px;
 	padding: 0 8px;
 }
+
+input[type="text"], input[type="email"], input[type="password"] {
+	width: 300px;
+	height: 40px;
+	padding: 0 8px;
+	border: solid #a8a8a8 1px;
+}
+
 button:hover{ cursor: pointer; }
 
 dt, dd { display: inline-block; }
@@ -359,6 +370,8 @@ textarea {
     line-height: 60px;
     text-align: center;
     border: 1px solid black;
+
+	cursor: pointer;
 }		
     
 .policy_upper_wrap { text-align: center; }
@@ -390,3 +403,11 @@ textarea {
     width: 200px;
     text-align: center;
 }
+
+#search-option-recruitcategory ul li,
+#search-option-region  ul li,
+#search-option-condition  ul li { margin: 4px; }
+
+#search-option-recruitcategory ul li input,
+#search-option-region  ul li input,
+#search-option-condition  ul li input { margin-right: 4px; }

@@ -15,10 +15,13 @@
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+        <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
         
         <!-- SCRIPT-->
         <script src="./app.js"></script>       
         <script src="./jquery-3.6.0.min.js"></script>
+        <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
         
     </head>
     <body>
@@ -43,21 +46,51 @@
                             <div>
                                 <h2>채용공고 작성 </h2>
                                 <div id = "write_contents_notice_company">
-                                    <div class="write_contents_notice_company1">기업명</div>
-                                    <div><input type="text" class="write_contents_notice_company2"></div>
-                                    <div class="write_contents_notice_company1">채용공고 명</div>	
-                                    <div><input type="text" class="write_contents_notice_company2"></div>
-                                    <div class="write_contents_notice_company1">담당업무</div>	
-                                    <div><input type="text" class="write_contents_notice_company2"></div>
-                                    <div class="write_contents_notice_company1">고용형태</div>	
-                                    <div><input type="text" class="write_contents_notice_company2"></div>
-                                    <div class="write_contents_notice_company1">겅력</div>	
-                                    <div><input type="text" class="write_contents_notice_company2"></div>
-                                    <div class="write_contents_notice_company1">근무지역</div>	
-                                    <div><input type="text" class="write_contents_notice_company2"></div>	
-                                    <div><textarea style="width : 800px; height : 500px"></textarea></div>
-                                    <div><button style="float: left;">등록</button></div>
-                                    <div><button style="float: left; margin-left: 20px;">취소</button></div>
+                                    
+                                    <div style="display: flex; align-items: center;">
+                                        <div class="write_contents_notice_company1">기업명</div>
+                                        <input type="text" class="write_contents_notice_company2">
+                                    </div>
+                                    <div style="display: flex; align-items: center;">
+                                        <div class="write_contents_notice_company1">채용공고 명</div>	
+                                        <input type="text" class="write_contents_notice_company2">
+                                    </div>
+                                    <div style="display: flex; align-items: center;">
+                                        <div class="write_contents_notice_company1">담당업무</div>	
+                                        <input type="text" class="write_contents_notice_company2">
+                                    </div>
+                                    <div style="display: flex; align-items: center;">
+                                        <div class="write_contents_notice_company1">고용형태</div>	
+                                        <input type="text" class="write_contents_notice_company2">
+                                    </div>
+                                    <div style="display: flex; align-items: center;">
+                                        <div class="write_contents_notice_company1">겅력</div>	
+                                        <input type="text" class="write_contents_notice_company2">
+                                    </div>
+                                    <div style="display: flex; align-items: center;">
+                                        <div class="write_contents_notice_company1">근무지역</div>	
+                                        <input type="text" class="write_contents_notice_company2">
+                                    </div>
+                                    <div id="editor" style="margin-top: 16px;"></div>
+                                    <script>
+										const editor = new toastui.Editor(
+										{
+											el: document.querySelector('#editor'),
+											initialEditType: 'wysiwyg',
+											width: '100%',
+											height: '500px',
+											initialValue: '',
+											/* toolbarItems: [] */
+										});
+									</script>
+
+                                    <div style="display: flex; margin-top: 16px;">
+                                        <button style="float: left;">등록</button>
+                                        <button style="float: left; margin-left: 20px;">취소</button>
+                                    </div>
+                                    
+                                   
+									
                                 </div>
                             </div><!-- 내용 -->
                        </div> 

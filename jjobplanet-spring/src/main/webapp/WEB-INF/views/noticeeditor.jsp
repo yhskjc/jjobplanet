@@ -21,6 +21,7 @@
         <script src="./app.js"></script>       
         <script src="./jquery-3.6.0.min.js"></script>
         <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
         
     </head>
     <body>

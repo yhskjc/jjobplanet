@@ -7,21 +7,18 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONObject;
 
+public class indvjoinDB
+{
 
-@WebServlet("/joinOk.do")
-public class wndusDB extends HttpServlet {
-
-	
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
+
+		
 		String umail = request.getParameter("umail");
 		String upw  = request.getParameter("upw");
 	
@@ -34,9 +31,9 @@ public class wndusDB extends HttpServlet {
 		
 		try(Connection conn =  DriverManager.getConnection(host,userid,passwd);
 			Statement stmt = conn.createStatement()) 
-		{			
+		{	
 			String sql = "insert into user (umail, upw) values "
-					   + "('" + umail + "', md5('" + upw + "')) ";
+					   + "('" + umail + "',md5('" + upw + "'))";
 			stmt.executeUpdate(sql);
 			object.put("result", "OK");			
 			
@@ -45,7 +42,5 @@ public class wndusDB extends HttpServlet {
 			
 			 object.put("result", "FAIL");
 		}
-			
-		
 	}
 }

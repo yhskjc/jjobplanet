@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
         
         <!-- SCRIPT-->
         <script src="./app.js"></script>       
@@ -32,7 +31,7 @@
                	<main>
                		 <div id="warp-main">
 	                    <!-- 내용 -->
-                        <form name="joinOk" method="post" action="joinOk.do">
+                        <form name="joinokCompany">
                             <div style="width: 100%;">                     
                                 <div id="joinlogin" style="width: 100%;"> 
                                     <div style="text-align: center;"><img style=" border:1px solid; width: 300px; height: 250px;" ></div>        

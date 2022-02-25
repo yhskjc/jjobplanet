@@ -26,7 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class HomeController {
-	
+
 	@GetMapping("/")
 	public String index()
 	{
@@ -191,7 +191,11 @@ public class HomeController {
 		
 	}
 	
-	
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
+
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public String login(HttpServletRequest request, RedirectAttributes setAttribute) throws ServletException, IOException {
 				

@@ -1,6 +1,7 @@
 package com.jjobplanet.jjobplanet.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.jjobplanet.jjobplanet.databasemanager.comjoinDB;
 import com.jjobplanet.jjobplanet.databasemanager.indvjoinDB;
 import com.jjobplanet.jjobplanet.databasemanager.loginDB;
+import com.jjobplanet.jjobplanet.databasemanager.mypageDB;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
@@ -64,12 +67,7 @@ public class HomeController {
 	{
 		return "default";
 	}
-	@GetMapping("/mypage_company")
-	public String mypage_company()
-	{
-		return "mypage_company";
-	}
-	@RequestMapping(value = "/mypage_company",method=RequestMethod.GET)
+	@RequestMapping(value = "/mypage_company")
 	public ModelAndView companydata()
 	{
 		ModelAndView mv = new ModelAndView();
@@ -99,12 +97,27 @@ public class HomeController {
 	public String recruitment() 
 	{
 		return "recruitment";
+	}	
+
+		@RequestMapping(value = "/mypage.do", method = RequestMethod.POST )
+	public String mypage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+				
+		String ugender = request.getParameter("ugender");
+		String ubirth = request.getParameter("ubirth");
+		String ujob = request.getParameter("ujob");
+		String ucareer = request.getParameter("ucareer");
+		System.out.println("ugender= " + " ubirth= " + ubirth + " ujob= " + ujob + "ucareer =" + ucareer);
+
+		mypageDB inchange = new mypageDB();
+		inchange.doPost(request, response);
+		
+		return "mypage";
 	}
 	@GetMapping("/mypage")
 	public String mypage() 
-	{
+{
 		return "mypage";
-	}
+	}	
 	@GetMapping("/reviewhistory")
 	public String reviewhistory() 
 	{

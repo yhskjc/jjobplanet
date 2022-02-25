@@ -94,7 +94,7 @@
                             <div style="display: flex; justify-content: center;"><img style="width: 500px; height: auto;object-fit: cover;" src="./img/hire.png";></div>
                             <div> 
                                 
-                                <h1>회원가입(기업)</h1>
+                                <h1회>원가입(기업)</h1>
                                 <div style="margin-top: 40px;">
                                     <dl>
                                         <dt class="join-company-info-head">이메일</dt>

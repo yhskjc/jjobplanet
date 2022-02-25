@@ -20,6 +20,36 @@
         <!-- SCRIPT-->
         <script src="./app.js"></script>       
         <script src="./jquery-3.6.0.min.js"></script>
+
+        <script>
+            function inchange()
+            {
+                let ugender = $('input[name=ugender]').val();
+                let ubirth = $('#ubirth').val();
+                let ujob = $('#ujob').val();
+                let ucareer = $('#ucareer').val();
+
+                if(ubirth === '년도') alert('년도를 선택해주세요');
+                else if(ujob === ' ') alert('현재(관심)직종을 적어주세요');
+
+                else{
+                    $.ajax({
+                        url: 'mypage.do',
+                        method: 'POST',
+                        data: {
+                            'ugender' : $('input[name=ugender]').val(),
+                            'ubirth' : ubirth,
+                            'ujob' : ujob,				           
+                            'ucareer' : ucareer
+                        },
+                        success : (response) => {  
+                            alert("정보가 변경되었습니다.")
+                            window.location.reload();    
+                        }	      
+                    })
+                }
+            }
+        </script>
         
     </head>
     <body link="black" vlink="black" alink="black">
@@ -51,14 +81,14 @@
                                         <div style="width: 387px;">
                                             <div>성별</div>
                                             <div style="margin-top: 16px;">
-                                                <input type="radio" id="contactChoice1" name="contact" value="man" style="font-size:20pt ; width:15px; height:15px"> <label for="contactChoice1">남자</label>
-                                                <input type="radio" id="contactChoice2" name="contact" value="woman"style="font-size:20pt ; width:15px;height:15px "> <label for="contactChoice2">여자</label>
+                                                <input type="radio" id="contactChoice1" name="ugender" value="man" style="font-size:20pt ; width:15px; height:15px"> <label for="contactChoice1">남자</label>
+                                                <input type="radio" id="contactChoice2" name="ugender" value="woman"style="font-size:20pt ; width:15px;height:15px "> <label for="contactChoice2">여자</label>
                                             </div>
                                         </div>
                                             
                                         <div>
                                             <div>출생년도</div>
-                                            <select name ="years" style="width: 287px; height: 40px; margin-top: 16px;">		 						
+                                            <select name ="ubirth" style="width: 287px; height: 40px; margin-top: 16px;">		 						
                                                 <option>년도</option>
                                                 <option>1981</option>
                                                 <option>1982</option>
@@ -92,12 +122,12 @@
                                     <div style="display: flex; ">
                                         <div style="width: 387px;">
                                             <div>현재(관심)직종</div>
-                                            <input type ="text" style="margin-top: 16px;">
+                                            <input type ="text" name="ujob" style="margin-top: 16px;">
                                         </div>	
                                       
                                         <div>
                                             <div>총 경력</div>
-                                            <select name ="career" style="width: 287px; height: 40px; margin-top: 16px;">
+                                            <select name ="ucareer" style="width: 287px; height: 40px; margin-top: 16px;">
                                                 <option>0년</option>
                                                 <option>1년~5년</option>
                                                 <option>5년~10년</option>
@@ -110,7 +140,7 @@
                     
                                
                                 <div style="display: flex; margin-top: 40px;">
-                                    <button onClick="window.location.reload()">정보 변경</button>
+                                    <button onClick="inchange()">정보 변경</button>
                                     <button onClick="window.location.reload()">회원 탈퇴</button>
                                 </div>
                             </div>

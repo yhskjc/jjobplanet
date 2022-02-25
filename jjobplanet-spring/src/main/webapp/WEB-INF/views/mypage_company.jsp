@@ -65,7 +65,7 @@
                                         </dl>
                                         <dl style="display: flex; margin-bottom: 16px;">
                                             <dt class="company-info-head">주요 산업</dt>	
-                                            <dd>${cmaintask</dd>
+                                            <dd>${cmaintask}</dd>
                                         </dl>
                                         <dl style="display: flex; margin-bottom: 16px;">
                                             <dt class="company-info-head">4대보험</dt>

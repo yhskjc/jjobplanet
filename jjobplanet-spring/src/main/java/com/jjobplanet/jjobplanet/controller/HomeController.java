@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 import com.jjobplanet.jjobplanet.databasemanager.comjoinDB;
 import com.jjobplanet.jjobplanet.databasemanager.indvjoinDB;
 import com.jjobplanet.jjobplanet.databasemanager.loginDB;
-import com.jjobplanet.jjobplanet.databasemanager.passwordchangeDB;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -65,25 +65,30 @@ public class HomeController {
 		return "default";
 	}
 	@GetMapping("/mypage_company")
-	public String mypage_company() 
+	public String mypage_company()
 	{
 		return "mypage_company";
+	}
+	@RequestMapping(value = "/mypage_company",method=RequestMethod.GET)
+	public ModelAndView companydata()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/mypage_company");
+		mv.addObject("ccategory", "오피지지");
+		mv.addObject("cworkers","80명");
+		mv.addObject("csize", "중소기업");
+		mv.addObject("cdate","2022-02-25");
+		mv.addObject("ceoname", "홍길동");
+		mv.addObject("cmaintask", "..");
+		mv.addObject("cinsurance", "국민연금,건강보험,산재보험,고용보험");
+		mv.addObject("chomepage", "www.naver.com");
+		mv.addObject("caddress", "서울 강남구 삼성로 88길 35-6(대치동) 목천빌딩");
+		return mv;
 	}
 	@GetMapping("/passwordchange_company")
 	public String passwordchange_company() 
 	{
 		return "passwordchange_company";
-	}
-	@RequestMapping(value = "/passwordchange.do", method = RequestMethod.POST)
-	public String passwordchange(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
-	
-		String upw = request.getParameter("upw");
-		System.out.println("upw="+upw);
-
-		passwordchangeDB pw = new passwordchangeDB();
-		pw.doPost(request, response);
-
-		return "passwordchange";
 	}
 	@GetMapping("/jobpostinglist")
 	public String jobpostinglist() 
@@ -190,7 +195,7 @@ public class HomeController {
 		return "joinokCompany";
 		
 	}
-	
+	@RequestMapping("./")
 	@GetMapping("/login")
 	public String login() {
 		return "login";

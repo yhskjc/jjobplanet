@@ -45,39 +45,39 @@
                                     <div style="width: 796px; margin-top: 40px;">
                                         <dl style="display: flex; margin-bottom: 16px;">
                                             <dt class="company-info-head">산업</dt>
-                                            <dd>var ccategory ='${company.ccategory}';</dd>
+                                            <dd>${ccategory}</dd>
                                         </dl>
                                         <dl style="display: flex; margin-bottom: 16px;">
                                             <dt class="company-info-head">사원수</dt>	
-                                            <dd>80명</dd>
+                                            <dd>${cworkers}</dd>
                                         </dl>
                                         <dl style="display: flex; margin-bottom: 16px;">
                                             <dt class="company-info-head">기업 구분</dt>	
-                                            <dd>중소기업</dd>
+                                            <dd>${csize}</dd>
                                         </dl>
                                         <dl style="display: flex; margin-bottom: 16px;">
                                             <dt class="company-info-head">설립일</dt>	
-                                            <dd>2022-02-10</dd>	
+                                            <dd>${cdate}</dd>	
                                         </dl>
                                         <dl style="display: flex; margin-bottom: 16px;">
                                             <dt class="company-info-head">대표자</dt>
-                                            <dd>아무개</dd>
+                                            <dd>${ceoname}</dd>
                                         </dl>
                                         <dl style="display: flex; margin-bottom: 16px;">
                                             <dt class="company-info-head">주요 산업</dt>	
-                                            <dd>...</dd>
+                                            <dd>${cmaintask</dd>
                                         </dl>
                                         <dl style="display: flex; margin-bottom: 16px;">
                                             <dt class="company-info-head">4대보험</dt>
-                                            <dd>국민연금 , 건강보험, 고용보험, 산재보험</dd>
+                                            <dd>${cinsurance}</dd>
                                         </dl>
                                         <dl style="display: flex; margin-bottom: 16px;">
                                             <dt class="company-info-head">홈페이지</dt>	
-                                            <dd>http://www.naver.com</dd>
+                                            <dd>${chomepage}</dd>
                                         </dl>
                                         <dl style="display: flex; margin-bottom: 16px;">
                                             <dt class="company-info-head" >주소</dt>
-                                            <dd>서울 강남구 삼성로 86길 35-6(대치동) 목천빌딩</dd>	
+                                            <dd>${caddress}</dd>	
                                         </dl>
                                         <button onClick="window.location.reload()">회원 탈퇴</button>
                                     </div>

@@ -1,6 +1,7 @@
 package com.jjobplanet.jjobplanet.controller;
 
 import java.io.IOException;
+import java.security.KeyStore.Entry.Attribute;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -10,17 +11,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.jjobplanet.jjobplanet.controller.domain.Member;
 import com.jjobplanet.jjobplanet.databasemanager.comjoinDB;
 import com.jjobplanet.jjobplanet.databasemanager.indvjoinDB;
 import com.jjobplanet.jjobplanet.databasemanager.loginDB;
 import com.jjobplanet.jjobplanet.databasemanager.mypageDB;
+import com.jjobplanet.jjobplanet.databasemanager.mypageDB.mypage;
+import com.jjobplanet.jjobplanet.controller.domain.*;
 
+import org.eclipse.jdt.internal.compiler.codegen.AttributeNamesConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -113,11 +119,30 @@ public class HomeController {
 		
 		return "mypage";
 	}
+	@RequestMapping(value = "/mypage.do")
+	public ModelAndView user()
+	{	
+		mypage mp = new mypage();
+		mp.getUbirth();
+		mp.getUcareer();
+		mp.getUgebder();
+		mp.getUjob();
+		
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/mypage");
+		mv.addObject("data", mydb);
+
+		
+		return mv;
+		
+	}
 	@GetMapping("/mypage")
-	public String mypage() 
-{
+	public String mypage(@RequestParam("ujob") String ujob, Model model){
+		model.addAttribute("ujob", ujob);
+		
 		return "mypage";
-	}	
+	} 	
 	@GetMapping("/reviewhistory")
 	public String reviewhistory() 
 	{
@@ -155,6 +180,7 @@ public class HomeController {
 
 	@GetMapping("/faq")
 	public String faq() {
+
 		return "faq";
 	}
 

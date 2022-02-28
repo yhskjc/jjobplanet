@@ -24,10 +24,10 @@
         <script>
             function inchange()
             {
-                let ugender = $('input[name=ugender]').val();
-                let ubirth = $('#ubirth').val();
+                let ugender = $('input[name=ugender]:checked').val();
+                let ubirth = $("#ubirth option:selected").val();
                 let ujob = $('#ujob').val();
-                let ucareer = $('#ucareer').val();
+                let ucareer = $("#ucareer option:selected").val();
 
                 if(ubirth === '년도') alert('년도를 선택해주세요');
                 else if(ujob === ' ') alert('현재(관심)직종을 적어주세요');
@@ -37,7 +37,7 @@
                         url: 'mypage.do',
                         method: 'POST',
                         data: {
-                            'ugender' : $('input[name=ugender]').val(),
+                            'ugender' : $('input[name=ugender]:checked').val(),
                             'ubirth' : ubirth,
                             'ujob' : ujob,				           
                             'ucareer' : ucareer
@@ -49,6 +49,13 @@
                     })
                 }
             }
+            function unregister()
+			{
+				if(confirm('회원탈퇴를 할 경우, 모든 정보가 삭제됩니다') == true)
+				{
+					location.replace="./index";
+				}
+			}
         </script>
         
     </head>
@@ -88,7 +95,7 @@
                                             
                                         <div>
                                             <div>출생년도</div>
-                                            <select name ="ubirth" style="width: 287px; height: 40px; margin-top: 16px;">		 						
+                                            <select name ="ubirth" id="ubirth" style="width: 287px; height: 40px; margin-top: 16px;">		 						
                                                 <option>년도</option>
                                                 <option>1981</option>
                                                 <option>1982</option>
@@ -122,12 +129,12 @@
                                     <div style="display: flex; ">
                                         <div style="width: 387px;">
                                             <div>현재(관심)직종</div>
-                                            <input type ="text" name="ujob" style="margin-top: 16px;">
+                                            <input type ="text" name="ujob" id="ujob" style="margin-top: 16px;" value="$(ujob)">
                                         </div>	
                                       
                                         <div>
                                             <div>총 경력</div>
-                                            <select name ="ucareer" style="width: 287px; height: 40px; margin-top: 16px;">
+                                            <select name ="ucareer" id="ucareer" style="width: 287px; height: 40px; margin-top: 16px;">
                                                 <option>0년</option>
                                                 <option>1년~5년</option>
                                                 <option>5년~10년</option>
@@ -141,7 +148,7 @@
                                
                                 <div style="display: flex; margin-top: 40px;">
                                     <button onClick="inchange()">정보 변경</button>
-                                    <button onClick="window.location.reload()">회원 탈퇴</button>
+                                    <button onClick="unregister()">회원 탈퇴</button>
                                 </div>
                             </div>
                         </div>

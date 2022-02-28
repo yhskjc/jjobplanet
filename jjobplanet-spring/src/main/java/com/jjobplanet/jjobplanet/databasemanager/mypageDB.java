@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 public class mypageDB 
@@ -48,6 +49,48 @@ public class mypageDB
 			 object.put("result", "FAIL");
 		}
     }
+    public class Member {
+
+        private String ugebder;
+        private String ubirth;
+        private String ujob;
+        private String ucareer;
+    
+        public String getUgebder() {
+            return this.ugebder;
+        }
+    
+        public void setUgebder(String ugebder) {
+            this.ugebder = ugebder;
+        }
+    
+        public String getUbirth() {
+            return this.ubirth;
+        }
+    
+        public void setUbirth(String ubirth) {
+            this.ubirth = ubirth;
+        }
+    
+        public String getUjob() {
+            return this.ujob;
+        }
+    
+        public void setUjob(String ujob) {
+            this.ujob = ujob;
+        }
+    
+        public String getUcareer() {
+            return this.ucareer;
+        }
+    
+        public void setUcareer(String ucareer) {
+            this.ucareer = ucareer;
+        }
+        
+    }
+    
+ 
  }
     
 

@@ -95,8 +95,8 @@
                                             
                                         <div>
                                             <div>출생년도</div>
-                                            <select name ="ubirth" id="ubirth" style="width: 287px; height: 40px; margin-top: 16px;">		 						
-                                                <option>년도</option>
+                                            <select name ="ubirth" id="ubirth"  style="width: 287px; height: 40px; margin-top: 16px;">		 						
+                                                <option selected>${ubirth}</option>
                                                 <option>1981</option>
                                                 <option>1982</option>
                                                 <option>1983</option>
@@ -129,13 +129,13 @@
                                     <div style="display: flex; ">
                                         <div style="width: 387px;">
                                             <div>현재(관심)직종</div>
-                                            <input type ="text" name="ujob" id="ujob" style="margin-top: 16px;" value="$(ujob)">
+                                            <input type ="text" name="ujob" id="ujob" style="margin-top: 16px;" value="${ujob}">
                                         </div>	
                                       
                                         <div>
                                             <div>총 경력</div>
                                             <select name ="ucareer" id="ucareer" style="width: 287px; height: 40px; margin-top: 16px;">
-                                                <option>0년</option>
+                                                <option selected>${ucareer}</option>
                                                 <option>1년~5년</option>
                                                 <option>5년~10년</option>
                                                 <option>10~15년</option>

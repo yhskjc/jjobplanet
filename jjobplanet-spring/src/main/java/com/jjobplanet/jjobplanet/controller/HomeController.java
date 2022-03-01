@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.security.KeyStore.Entry.Attribute;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -11,13 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.jjobplanet.jjobplanet.controller.domain.Member;
 import com.jjobplanet.jjobplanet.databasemanager.comjoinDB;
 import com.jjobplanet.jjobplanet.databasemanager.indvjoinDB;
 import com.jjobplanet.jjobplanet.databasemanager.loginDB;
 import com.jjobplanet.jjobplanet.databasemanager.mypageDB;
-import com.jjobplanet.jjobplanet.databasemanager.mypageDB.mypage;
-import com.jjobplanet.jjobplanet.controller.domain.*;
 
 import org.eclipse.jdt.internal.compiler.codegen.AttributeNamesConstants;
 import org.springframework.stereotype.Controller;
@@ -103,9 +101,8 @@ public class HomeController {
 	public String recruitment() 
 	{
 		return "recruitment";
-	}	
-
-		@RequestMapping(value = "/mypage.do", method = RequestMethod.POST )
+	}
+	@RequestMapping(value = "/mypage.do", method = RequestMethod.POST )
 	public String mypage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
 				
 		String ugender = request.getParameter("ugender");
@@ -119,27 +116,20 @@ public class HomeController {
 		
 		return "mypage";
 	}
-	@RequestMapping(value = "/mypage.do")
-	public ModelAndView user()
+	@RequestMapping(value = "/mypage",method = RequestMethod.GET)
+	public ModelAndView user(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException
 	{	
-		mypage mp = new mypage();
-		mp.getUbirth();
-		mp.getUcareer();
-		mp.getUgebder();
-		mp.getUjob();
 		
-
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/mypage");
-		mv.addObject("data", mydb);
-
+		mypageDB mypageDB = new mypageDB();
 		
-		return mv;
+		ModelAndView mypage = new ModelAndView();
+		mypage.setViewName("mypage");
+		mypage.addObject("ugender",ugender);
 		
+		return mypage;
 	}
 	@GetMapping("/mypage")
-	public String mypage(@RequestParam("ujob") String ujob, Model model){
-		model.addAttribute("ujob", ujob);
+	public String mypage(){
 		
 		return "mypage";
 	} 	
